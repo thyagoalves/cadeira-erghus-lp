@@ -241,6 +241,9 @@ p.reveal-text {
     font-weight: 600 !important;
     line-height: 1.25 !important;
     text-align: left !important;
+    text-align-last: left !important;
+    word-spacing: normal !important;
+    white-space: normal !important;
     color: #CBCBCB !important;
     letter-spacing: -0.02em !important;
     margin: 0 !important;
@@ -256,7 +259,11 @@ p.reveal-text span {
     font-weight: inherit !important;
     line-height: inherit !important;
     letter-spacing: inherit !important;
-    display: inline-block;
+    word-spacing: normal !important;
+    white-space: normal !important;
+    display: inline !important;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
     background-image: linear-gradient(90deg, #484848 50%, #CBCBCB 50%);
     background-size: 200% 100%;
     background-position: 100% 0;
