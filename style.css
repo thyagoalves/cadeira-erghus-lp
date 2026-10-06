@@ -19,6 +19,47 @@ html { scroll-behavior: smooth; }
     --slide-width-l6: calc((100vw - 2 * var(--container-margin) - 32px) / 3 + 16px);
 }
 
+/* =========================================================
+   FORÇAR LARGURA TOTAL (FULL-BLEED) NA VTEX
+   ========================================================== */
+.lojagoldentec-enhanced-description-0-x-wrapper,
+.lojagoldentec-enhanced-description-0-x-wrapper--description-ids,
+.lojagoldentec-enhanced-description-0-x-container,
+.lojagoldentec-enhanced-description-0-x-container--description-ids,
+.lojagoldentec-enhanced-description-0-x-contentContainer,
+.lojagoldentec-enhanced-description-0-x-contentContainer--description-ids,
+.lojagoldentec-enhanced-description-0-x-contentItem,
+.lojagoldentec-enhanced-description-0-x-contentItem--description-ids,
+.lojagoldentec-enhanced-description-0-x-contentWrapper,
+.lojagoldentec-enhanced-description-0-x-contentWrapper--description-ids,
+.lojagoldentec-enhanced-description-0-x-wrapper--description-ids .lojagoldentec-enhanced-description-0-x-container--description-ids .lojagoldentec-enhanced-description-0-x-contentContainer .lojagoldentec-enhanced-description-0-x-contentItem .lojagoldentec-enhanced-description-0-x-contentWrapper,
+#descricao,
+[class*="enhanced-description"][class*="contentWrapper"],
+[class*="enhanced-description"][class*="contentContainer"],
+[class*="enhanced-description"][class*="container"] {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-top: 0 !important;
+}
+
+.page-wrapper {
+    background-color: #101010;
+    overflow-x: clip !important;
+    overflow-y: visible;
+    position: relative;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 100vh;
+}
+
+/* Proteção global de fonte para parágrafos contra sobrescrita da VTEX */
+.page-wrapper p {
+    font-family: "Urbanist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
 .hero-section {
     display: flex;
     align-items: flex-end;
@@ -174,25 +215,37 @@ html { scroll-behavior: smooth; }
     view-timeline-axis: block;
 }
 
-.reveal-text {
-    font-size: clamp(30px, 4.5vw, 53px);
-    font-weight: 600; /* Urbanist Semibold */
-    line-height: 1.25;
-    text-align: left;
-    color: #CBCBCB;
-    letter-spacing: -0.02em;
-    margin: 0;
+.reveal-text,
+.page-wrapper .reveal-text,
+div.reveal-text,
+p.reveal-text {
+    font-family: "Urbanist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: clamp(30px, 4.5vw, 53px) !important;
+    font-weight: 600 !important;
+    line-height: 1.25 !important;
+    text-align: left !important;
+    color: #CBCBCB !important;
+    letter-spacing: -0.02em !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-/* Técnica idêntica ao GET WAI2.html: preenchimento gradual por palavra usando gradiente recortado */
-.reveal-text span {
+.reveal-text span,
+.page-wrapper .reveal-text span,
+div.reveal-text span,
+p.reveal-text span {
+    font-family: "Urbanist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+    letter-spacing: inherit !important;
     display: inline-block;
     background-image: linear-gradient(90deg, #484848 50%, #CBCBCB 50%);
     background-size: 200% 100%;
     background-position: 100% 0;
     -webkit-background-clip: text;
     background-clip: text;
-    color: transparent;
+    color: transparent !important;
     animation-name: fillText;
     animation-timing-function: linear;
     animation-fill-mode: both;
@@ -2744,18 +2797,51 @@ details[open] .dropdown-menu-list {
     position: relative;
 }
 
-.footer-legal-notes {
+.footer-legal-notes,
+.page-wrapper .footer-legal-notes {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
     text-align: left;
 }
 
-.footer-legal-notes p {
-    font-size: 12px;
-    line-height: 1.6;
-    color: #888888;
-    margin: 0;
+.legal-note-item,
+.page-wrapper .legal-note-item,
+.footer-legal-notes p,
+.footer-legal-notes div,
+.page-wrapper .footer-legal-notes p,
+.page-wrapper .footer-legal-notes div {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-family: "Urbanist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 1.6 !important;
+    color: #888888 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+}
+
+.legal-note-num,
+.page-wrapper .legal-note-num {
+    font-family: "Urbanist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+    color: #555555 !important;
+    flex-shrink: 0;
+}
+
+.legal-note-text,
+.page-wrapper .legal-note-text {
+    font-family: "Urbanist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 1.6 !important;
+    color: #888888 !important;
+    flex: 1;
 }
 
 .footer-divider {
@@ -2771,10 +2857,17 @@ details[open] .dropdown-menu-list {
     align-items: center;
 }
 
-.footer-copyright {
-    font-size: 13px;
-    color: #888888;
-    margin: 0;
+.footer-copyright,
+.page-wrapper .footer-copyright,
+p.footer-copyright,
+div.footer-copyright {
+    font-family: "Urbanist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 1.6 !important;
+    color: #888888 !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 @media (max-width: 992px) {

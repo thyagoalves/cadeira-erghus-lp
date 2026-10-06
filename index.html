@@ -36,6 +36,47 @@ html { scroll-behavior: smooth; }
     --slide-width-l6: calc((100vw - 2 * var(--container-margin) - 32px) / 3 + 16px);
 }
 
+/* =========================================================
+   FORÇAR LARGURA TOTAL (FULL-BLEED) NA VTEX
+   ========================================================== */
+.lojagoldentec-enhanced-description-0-x-wrapper,
+.lojagoldentec-enhanced-description-0-x-wrapper--description-ids,
+.lojagoldentec-enhanced-description-0-x-container,
+.lojagoldentec-enhanced-description-0-x-container--description-ids,
+.lojagoldentec-enhanced-description-0-x-contentContainer,
+.lojagoldentec-enhanced-description-0-x-contentContainer--description-ids,
+.lojagoldentec-enhanced-description-0-x-contentItem,
+.lojagoldentec-enhanced-description-0-x-contentItem--description-ids,
+.lojagoldentec-enhanced-description-0-x-contentWrapper,
+.lojagoldentec-enhanced-description-0-x-contentWrapper--description-ids,
+.lojagoldentec-enhanced-description-0-x-wrapper--description-ids .lojagoldentec-enhanced-description-0-x-container--description-ids .lojagoldentec-enhanced-description-0-x-contentContainer .lojagoldentec-enhanced-description-0-x-contentItem .lojagoldentec-enhanced-description-0-x-contentWrapper,
+#descricao,
+[class*="enhanced-description"][class*="contentWrapper"],
+[class*="enhanced-description"][class*="contentContainer"],
+[class*="enhanced-description"][class*="container"] {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-top: 0 !important;
+}
+
+.page-wrapper {
+    background-color: #101010;
+    overflow-x: clip !important;
+    overflow-y: visible;
+    position: relative;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 100vh;
+}
+
+/* Proteção global de fonte para parágrafos contra sobrescrita da VTEX */
+.page-wrapper p {
+    font-family: "Urbanist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
 .hero-section {
     display: flex;
     align-items: flex-end;
@@ -191,25 +232,37 @@ html { scroll-behavior: smooth; }
     view-timeline-axis: block;
 }
 
-.reveal-text {
-    font-size: clamp(30px, 4.5vw, 53px);
-    font-weight: 600; /* Urbanist Semibold */
-    line-height: 1.25;
-    text-align: left;
-    color: #CBCBCB;
-    letter-spacing: -0.02em;
-    margin: 0;
+.reveal-text,
+.page-wrapper .reveal-text,
+div.reveal-text,
+p.reveal-text {
+    font-family: "Urbanist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: clamp(30px, 4.5vw, 53px) !important;
+    font-weight: 600 !important;
+    line-height: 1.25 !important;
+    text-align: left !important;
+    color: #CBCBCB !important;
+    letter-spacing: -0.02em !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-/* Técnica idêntica ao GET WAI2.html: preenchimento gradual por palavra usando gradiente recortado */
-.reveal-text span {
+.reveal-text span,
+.page-wrapper .reveal-text span,
+div.reveal-text span,
+p.reveal-text span {
+    font-family: "Urbanist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+    letter-spacing: inherit !important;
     display: inline-block;
     background-image: linear-gradient(90deg, #484848 50%, #CBCBCB 50%);
     background-size: 200% 100%;
     background-position: 100% 0;
     -webkit-background-clip: text;
     background-clip: text;
-    color: transparent;
+    color: transparent !important;
     animation-name: fillText;
     animation-timing-function: linear;
     animation-fill-mode: both;
@@ -2761,18 +2814,51 @@ details[open] .dropdown-menu-list {
     position: relative;
 }
 
-.footer-legal-notes {
+.footer-legal-notes,
+.page-wrapper .footer-legal-notes {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
     text-align: left;
 }
 
-.footer-legal-notes p {
-    font-size: 12px;
-    line-height: 1.6;
-    color: #888888;
-    margin: 0;
+.legal-note-item,
+.page-wrapper .legal-note-item,
+.footer-legal-notes p,
+.footer-legal-notes div,
+.page-wrapper .footer-legal-notes p,
+.page-wrapper .footer-legal-notes div {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-family: "Urbanist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 1.6 !important;
+    color: #888888 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+}
+
+.legal-note-num,
+.page-wrapper .legal-note-num {
+    font-family: "Urbanist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+    color: #555555 !important;
+    flex-shrink: 0;
+}
+
+.legal-note-text,
+.page-wrapper .legal-note-text {
+    font-family: "Urbanist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 1.6 !important;
+    color: #888888 !important;
+    flex: 1;
 }
 
 .footer-divider {
@@ -2788,10 +2874,17 @@ details[open] .dropdown-menu-list {
     align-items: center;
 }
 
-.footer-copyright {
-    font-size: 13px;
-    color: #888888;
-    margin: 0;
+.footer-copyright,
+.page-wrapper .footer-copyright,
+p.footer-copyright,
+div.footer-copyright {
+    font-family: "Urbanist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 1.6 !important;
+    color: #888888 !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 @media (max-width: 992px) {
@@ -3068,9 +3161,9 @@ details[open] .dropdown-menu-list {
         <main style="padding: 0px;" class="site-content">
             <!-- Bloco 1: Texto Reveal Progressivo -->
             <section class="text-reveal-section">
-                <p class="reveal-text">
+                <div class="reveal-text">
                     <span class="w-1">cada</span> <span class="w-2">ajuste</span> <span class="w-3">foi</span> <span class="w-4">pensado</span> <span class="w-5">para</span> <span class="w-6">acompanhar</span> <span class="w-7">o</span> <span class="w-8">seu</span> <span class="w-9">jeito</span> <span class="w-10">de</span> <span class="w-11">trabalhar,</span> <span class="w-12">encontrar</span> <span class="w-13">a</span> <span class="w-14">posição</span> <span class="w-15">certa</span> <span class="w-16">e</span> <span class="w-17">transformar</span> <span class="w-18">horas</span> <span class="w-19">de</span> <span class="w-20">trabalho</span> <span class="w-21">em</span> <span class="w-22">uma</span> <span class="w-23">experiência</span> <span class="w-24">mais</span> <span class="w-25">confortável,</span> <span class="w-26">natural</span> <span class="w-27">e</span> <span class="w-28">sua.</span>
-                </p>
+                </div>
             </section>
 
             <!-- Bloco 2: Animação Frame-a-Frame da Bicicleta (Não Sticky) -->
@@ -4162,16 +4255,16 @@ Uma cadeira que acompanha você, não importa a pose.
         <footer class="site-footer">
             <div class="section-container">
                 <div class="footer-legal-notes">
-                    <p>¹ A regulagem dos 5 pontos anatômicos e ergonômicos (apoio de cabeça, suporte lombar, braços 3D, ajuste de altura e inclinação do encosto) foi desenvolvida para proporcionar conforto postural e suporte ao longo da jornada de trabalho, alinhando-se às boas práticas de ergonomia no trabalho (NR-17). A sensação de conforto e a adaptação ideal dependem das características antropométricas individuais de cada usuário. Recomenda-se alternar posições e realizar pausas periódicas para a manutenção do bem-estar postural.</p>
-                    <p>² O sistema de reclinação do encosto opera entre 90° e aproximadamente 135°, contando com mecanismo relax de tensão e trava de segurança integrada. Para garantir a estabilidade do conjunto mecânico e a segurança do usuário, o travamento e o destravamento da inclinação devem ser acionados sempre com o usuário devidamente posicionado e com as costas apoiadas no encosto.</p>
-                    <p>³ Os rodízios com rodas de 50 mm em nylon/PU foram desenvolvidos para garantir deslocamento fluido e silencioso em pisos corporativos e residenciais padrão (como pisos vinílicos, cerâmicas e carpetes comerciais). Para aplicação sobre superfícies sensíveis ao atrito contínuo, tais como pisos de madeira natural, tacos encerados ou porcelanatos polidos de alto brilho, recomenda-se a utilização de tapetes de proteção adequados para evitar riscos e desgaste por abrasão.</p>
-                    <p>⁴ A especificação de pistão pneumático a gás Classe 3 na Cadeira Erghus X assegura maior espessura nas paredes de aço do cilindro, resistência mecânica superior e suporte a ciclos contínuos de regulagem vertical (curso de 10 cm) e rotação 360°, atendendo a normas internacionais de segurança e ensaios de fadiga (como ANSI/BIFMA X5.1 e DIN 4550) com durabilidade superior às classes 1 e 2.</p>
-                    <p>⁵ A capacidade máxima de peso recomendada de até 120 kg para a Cadeira Erghus X é comprovada através de ensaios laboratoriais de carga estática e dinâmica para uso regular sentado. Para assegurar a integridade estrutural, a estabilidade e a validade da garantia contratual do fabricante, o limite de carga especificado não deve ser ultrapassado, evitando-se impactos bruscos ou sobrecargas concentradas.</p>
-                    <p>* As imagens, vídeos e animações apresentados nesta página são meramente ilustrativos e foram desenvolvidos com o auxílio de inteligência artificial e computação gráfica, podendo apresentar pequenas variações de detalhes, texturas e acabamento em relação ao produto físico final.</p>
+                    <div class="legal-note-item"><span class="legal-note-num">¹</span><span class="legal-note-text">A regulagem dos 5 pontos anatômicos e ergonômicos (apoio de cabeça, suporte lombar, braços 3D, ajuste de altura e inclinação do encosto) foi desenvolvida para proporcionar conforto postural e suporte ao longo da jornada de trabalho, alinhando-se às boas práticas de ergonomia no trabalho (NR-17). A sensação de conforto e a adaptação ideal dependem das características antropométricas individuais de cada usuário. Recomenda-se alternar posições e realizar pausas periódicas para a manutenção do bem-estar postural.</span></div>
+                    <div class="legal-note-item"><span class="legal-note-num">²</span><span class="legal-note-text">O sistema de reclinação do encosto opera entre 90° e aproximadamente 135°, contando com mecanismo relax de tensão e trava de segurança integrada. Para garantir a estabilidade do conjunto mecânico e a segurança do usuário, o travamento e o destravamento da inclinação devem ser acionados sempre com o usuário devidamente posicionado e com as costas apoiadas no encosto.</span></div>
+                    <div class="legal-note-item"><span class="legal-note-num">³</span><span class="legal-note-text">Os rodízios com rodas de 50 mm em nylon/PU foram desenvolvidos para garantir deslocamento fluido e silencioso em pisos corporativos e residenciais padrão (como pisos vinílicos, cerâmicas e carpetes comerciais). Para aplicação sobre superfícies sensíveis ao atrito contínuo, tais como pisos de madeira natural, tacos encerados ou porcelanatos polidos de alto brilho, recomenda-se a utilização de tapetes de proteção adequados para evitar riscos e desgaste por abrasão.</span></div>
+                    <div class="legal-note-item"><span class="legal-note-num">⁴</span><span class="legal-note-text">A especificação de pistão pneumático a gás Classe 3 na Cadeira Erghus X assegura maior espessura nas paredes de aço do cilindro, resistência mecânica superior e suporte a ciclos contínuos de regulagem vertical (curso de 10 cm) e rotação 360°, atendendo a normas internacionais de segurança e ensaios de fadiga (como ANSI/BIFMA X5.1 e DIN 4550) com durabilidade superior às classes 1 e 2.</span></div>
+                    <div class="legal-note-item"><span class="legal-note-num">⁵</span><span class="legal-note-text">A capacidade máxima de peso recomendada de até 120 kg para a Cadeira Erghus X é comprovada através de ensaios laboratoriais de carga estática e dinâmica para uso regular sentado. Para assegurar a integridade estrutural, a estabilidade e a validade da garantia contratual do fabricante, o limite de carga especificado não deve ser ultrapassado, evitando-se impactos bruscos ou sobrecargas concentradas.</span></div>
+                    <div class="legal-note-item"><span class="legal-note-num">*</span><span class="legal-note-text">As imagens, vídeos e animações apresentados nesta página são meramente ilustrativos e foram desenvolvidos com o auxílio de inteligência artificial e computação gráfica, podendo apresentar pequenas variações de detalhes, texturas e acabamento em relação ao produto físico final.</span></div>
                 </div>
                 <div class="footer-divider"></div>
                 <div class="footer-bottom">
-                    <p class="footer-copyright">© 2026 Get. Todos os direitos reservados.</p>
+                    <div class="footer-copyright">© 2026 Get. Todos os direitos reservados.</div>
                 </div>
             </div>
         </footer>
