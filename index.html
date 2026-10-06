@@ -1242,13 +1242,16 @@ p.reveal-text span {
     width: 100%;
 }
 
-.attribute-title {
-    font-size: 19px;
-    font-weight: 600;
-    color: #ffffff; /* Texto branco */
-    margin: 0;
-    letter-spacing: -0.02em;
-    line-height: 1.25;
+.attribute-title,
+.page-wrapper .attribute-title,
+h3.attribute-title {
+    font-family: "Urbanist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 19px !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+    margin: 0 !important;
+    letter-spacing: -0.02em !important;
+    line-height: 1.25 !important;
 }
 
 /* Boxicons attributes icon styles */
@@ -1258,12 +1261,18 @@ p.reveal-text span {
     flex-shrink: 0;
 }
 
-.attribute-text {
-    font-size: 14px;
-    line-height: 1.45;
-    color: rgba(255, 255, 255, 0.9); /* Texto branco */
-    margin: 0;
-    padding-right: 48px; /* Evita sobreposição com o botão de olho */
+.attribute-text,
+.page-wrapper .attribute-text,
+p.attribute-text,
+div.attribute-text {
+    font-family: "Urbanist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 1.45 !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    margin: 0 !important;
+    padding-right: 48px !important;
+    letter-spacing: normal !important;
 }
 
 /* Botão de olho aos moldes do .btn-plus */
@@ -3410,8 +3419,8 @@ div.footer-copyright {
                                     <h3 class="attribute-title">Ajuste de pescoço</h3>
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="attribute-icon" style="width: 24px; height: 24px; color: #ffffff;"></svg>
                                 </div>
-                                <p class="attribute-text">
-                                    Suba, desça e incline o apoio para encontrar a altura ideal e evitar desconfortos.</p>
+                                <div class="attribute-text">
+                                    Suba, desça e incline o apoio para encontrar a altura ideal e evitar desconfortos.</div>
                             </div>
                             <label for="card-toggle-1" class="btn-eye" title="Ocultar/Exibir texto">
                                 <svg class="icon-eye-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
@@ -3430,9 +3439,9 @@ div.footer-copyright {
                                 <div class="attribute-card-header">
                                     <h3 class="attribute-title">Ajuste de lombar</h3>
                                 </div>
-                                <p class="attribute-text">
+                                <div class="attribute-text">
                                     Ajuste o apoio lombar até encontrar a posição mais confortável para suas costas.
-                                </p>
+                                </div>
                             </div>
                             <label for="card-toggle-2" class="btn-eye" title="Ocultar/Exibir texto">
                                 <svg class="icon-eye-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
@@ -3451,9 +3460,9 @@ div.footer-copyright {
                                 <div class="attribute-card-header">
                                     <h3 class="attribute-title">Braço 3D</h3>
                                 </div>
-                                <p class="attribute-text">
+                                <div class="attribute-text">
                                     Ajuste a altura, gire e mova para frente ou para trás até encontrar o apoio ideal.
-                                </p>
+                                </div>
                             </div>
                             <label for="card-toggle-3" class="btn-eye" title="Ocultar/Exibir texto">
                                 <svg class="icon-eye-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
@@ -3472,9 +3481,9 @@ div.footer-copyright {
                                 <div class="attribute-card-header">
                                     <h3 class="attribute-title">Inclinação 90°–135°²</h3>
                                 </div>
-                                <p class="attribute-text">
+                                <div class="attribute-text">
                                     Ajuste a inclinação do encosto para trabalhar, relaxar ou encontrar sua posição ideal.
-                                </p>
+                                </div>
                             </div>
                             <label for="card-toggle-4" class="btn-eye" title="Ocultar/Exibir texto">
                                 <svg class="icon-eye-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
