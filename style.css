@@ -1,13 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800;900&display=swap');
+
 /* =========================================================
-   GET CITY E-BIKE — LANDING PAGE HERO
-   Escopo: Estilos para o cabeçalho premium da Bicicleta City
+   CADEIRA ERGHUS — LANDING PAGE
+   Isolamento de CSS e Prevenção de Sobrescritas (VTEX Scoping)
    ========================================================== */
 
-/* --- Reset Global --- */
-* {
+/* --- Reset Scoped (Limitado ao Wrapper da LP) --- */
+.page-wrapper,
+.page-wrapper * {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.page-wrapper h1,
+.page-wrapper h2,
+.page-wrapper h3,
+.page-wrapper p,
+.page-wrapper ul,
+.page-wrapper ol {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 :root {
@@ -19,18 +32,42 @@
 
 html, body {
     width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-    background-color: #101010;
-    font-family: "Urbanist", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    min-height: 100%;
 }
 
 .page-wrapper {
     width: 100%;
     min-height: 100vh;
     position: relative;
+    background-color: #101010;
+    font-family: "Urbanist", sans-serif !important;
+    overflow-x: hidden;
+}
+
+.page-wrapper * {
+    font-family: inherit;
+}
+
+/* --- Especificidade Reforçada em Tags Críticas --- */
+/* Títulos de Modais e Seções */
+.page-wrapper .modal-body > h2,
+.page-wrapper .section-title {
+    font-size: 28px !important;
+    font-weight: 600 !important;
+    line-height: 1.25 !important;
+    color: #101010 !important;
+    margin-bottom: 16px !important;
+}
+
+/* Parágrafos e Textos Descritivos */
+.page-wrapper .modal-body p,
+.page-wrapper .modal-body > p,
+.page-wrapper .modal-intro-text,
+.page-wrapper .subtopic-text {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    color: #484848 !important;
+    margin: 0 !important;
 }
 
 /* --- Seção Hero (LPMonitorPortátilMaxView) --- */
